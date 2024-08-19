@@ -1,0 +1,224 @@
+/* General Page Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Layout Container */
+.note-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* New Note Button */
+.new-note-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.new-note-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Notes Container */
+.notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Note Styling */
+.note {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.note:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Note Body */
+.note-body {
+    padding: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* Note Buttons */
+.note-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    border-top: 1px solid #eee;
+}
+
+.note-edit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.note-edit-button:hover {
+    background-color: #0056b3;
+}
+
+.note-delete-button {
+    background-color: #dc3545;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.note-delete-button:hover {
+    background-color: #c82333;
+}
+
+/* Pagination */
+.p-6 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.p-6 .pagination {
+    display: inline-flex;
+    gap: 10px;
+}
+
+.p-6 .pagination a,
+.p-6 .pagination span {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 5px;
+    color: #007bff;
+    text-decoration: none;
+    border: 1px solid #007bff;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.p-6 .pagination a:hover,
+.p-6 .pagination .active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.p-6 .pagination .page-item {
+    font-size: 14px; /* Adjust font size here */
+}
+
+.p-6 .pagination .page-item .page-link {
+    padding: 6px 10px; /* Adjust padding to make the arrows smaller */
+}
+
+.p-6 .pagination .page-item .page-link:focus {
+    box-shadow: none; /* Remove focus shadow if needed */
+}
+
+/*Create page*/
+
+* Layout Container for Single Note */
+.note-container.single-note {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+.note-container.single-note h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Styling */
+.note {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Textarea Styling */
+.note-body {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.note-body:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Buttons Container */
+.note-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Cancel Button */
+.note-cancel-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6c757d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.note-cancel-button:hover {
+    background-color: #5a6268;
+}
+
+/* Submit Button */
+.note-submit-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.note-submit-button:hover {
+    background-color: #0056b3;
+}
