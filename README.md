@@ -1,6 +1,9 @@
 # Personal Journal App
 
-![App Logo](journaling.png                                        
+![App Logo](journaling.png)
+                                                                         
+  
+  
   
                       
   ) <!-- Replace with the path to your app logo -->
