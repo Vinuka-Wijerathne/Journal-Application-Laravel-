@@ -1,12 +1,8 @@
 # Personal Journal App
 
-![App Logo](journaling.png)
-                                                                         
-  
-  
-  
-                      
-  ) <!-- Replace with the path to your app logo -->
+<p align="center">
+  <img src="journaling.png" alt="App Logo" />
+</p>
 
 ## Project Description
 
@@ -29,7 +25,3 @@ The Personal Journal App is a web-based application designed to help users docum
 
 ## Purpose
 The Personal Journal App aims to provide users with a private space to express themselves, track their personal growth, and reflect on their daily experiences. Whether for mental well-being or personal documentation, this app encourages users to cultivate a habit of writing.
-
-                                        
-  
-  
