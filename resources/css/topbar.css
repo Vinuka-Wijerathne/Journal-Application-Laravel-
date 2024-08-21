@@ -1,0 +1,30 @@
+/* Topbar Styles */
+.topbar {
+    background-color: #333;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.topbar .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.topbar .menu {
+    display: flex;
+    gap: 15px;
+}
+
+.topbar .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.topbar .menu a:hover {
+    color: #ddd;
+}

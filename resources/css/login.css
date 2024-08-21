@@ -1,0 +1,128 @@
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.login-box {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    width: 50%;
+    padding: 40px;
+    order: 2; /* Switches the form to the right side */
+}
+
+.login-image {
+    width: 50%;
+    background-image: url('/path-to-your-image.png'); /* Update this path as needed */
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    order: 1; /* Switches the image to the left side */
+}
+
+.login-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+.btn-primary-login {
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    background-color: #f95f06;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn-primary-login:hover {
+    background-color: #2d995b;
+}
+
+.link {
+    display: block;
+    margin-top: 10px;
+    color: #38c172;
+    text-align: center;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.image-text h1 {
+    margin-left: 50px;
+}
+
+.image-text img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.image-text p {
+    font-size: 1.1em;
+    color: #333;
+    text-align: center;
+    margin: 0;
+}
+.error-popup {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.error-popup ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.error-popup li {
+    margin-bottom: 5px;
+}

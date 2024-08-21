@@ -1,0 +1,34 @@
+.calendar-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.calendar-day {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar-day span {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.journal-link {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.journal-link:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,48 @@
+.verification-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+}
+
+.verification-content {
+    text-align: center;
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.verification-content h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.verification-content p {
+    margin-top: 20px;
+    color: #555;
+}
+
+.verification-content lottie-player {
+    margin-bottom: 20px;
+}
+
+.btn-primary-verify {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #38c172;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn-primary-verify:hover {
+    background-color: #2d995b;
+}
