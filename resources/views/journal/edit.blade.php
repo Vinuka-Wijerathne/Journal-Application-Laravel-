@@ -8,11 +8,19 @@
             @csrf
             @method('PUT') <!-- Specify the PUT method for update -->
 
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" value="{{ \Carbon\Carbon::parse($journalEntry->date)->format('Y-m-d') }}" required>
+            </div>
+
             <!-- Editor.js container -->
             <div id="editorjs"></div>
 
             <!-- Hidden input to store Editor.js data -->
             <input type="hidden" name="content" id="editorjs-content">
+
+            <!-- Speech-to-Text Button -->
+            <button type="button" id="start-record-btn" class="btn-primary">Start Speech Recognition</button>
 
             <button type="submit" class="btn-primary">Update Journal</button>
         </form>
@@ -40,6 +48,28 @@
                         console.log('Saving failed: ', error);
                     });
                 }
+            });
+
+            // Speech Recognition
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.interimResults = true;
+
+            recognition.addEventListener('result', (event) => {
+                const transcript = Array.from(event.results)
+                    .map(result => result[0])
+                    .map(result => result.transcript)
+                    .join('');
+                editor.blocks.insert('paragraph', {
+                    text: transcript
+                });
+            });
+
+            recognition.addEventListener('end', () => {
+                // The recognition stops automatically when you stop speaking
+            });
+
+            document.getElementById('start-record-btn').addEventListener('click', () => {
+                recognition.start();
             });
         });
     </script>

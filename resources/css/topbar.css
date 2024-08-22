@@ -44,7 +44,6 @@
     align-items: center; /* Center icons and text vertically */
     padding: 8px 12px; /* Add padding for a larger clickable area */
     border-radius: 4px; /* Rounded corners */
-    margin-top: 100x;
 }
 
 .menu-item:hover {
@@ -56,21 +55,64 @@
     width: 50px; /* Profile icon size */
     height: auto;
     margin-right: 5px; /* Space between icon and text */
-    border-radius: 50px;
+    border-radius: 50px; /* Round profile icon */
 }
-/* Logout Button Styles */
-.logout-button {
-    background-color: transparent; /* No background for a clean look */
+
+/* Menu Dropdown Styles */
+.menu-dropdown {
+    position: relative; /* Positioning for the dropdown */
+}
+
+.menu-icon {
+    background: none; /* No background for the icon */
+    border: none; /* Remove border */
+    color: #fff; /* White text for consistency */
+    font-size: 24px; /* Size of the menu icon */
+    cursor: pointer; /* Pointer cursor for better UX */
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Position relative to the menu icon */
+    right: 0; /* Align to the right */
+    background-color: #1a1a1a; /* Same background as the topbar */
+    min-width: 160px; /* Minimum width for the dropdown */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+/* Show dropdown on hover */
+.menu-dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown */
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: #fff; /* White text */
+    padding: 12px 16px; /* Padding for each link */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make links block elements */
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+    color: #ddd; /* Change text color on hover */
+}
+
+/* Logout Button in Dropdown */
+.logout-menu-item {
+    background: none; /* No background for logout */
     border: none; /* Remove border */
     color: #fff; /* White text for consistency */
     font-size: 1em; /* Same font size as other menu items */
     cursor: pointer; /* Pointer cursor for better UX */
-    padding: 8px 12px; /* Padding for a larger clickable area */
-    border-radius: 4px; /* Rounded corners */
-    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+    padding: 12px 16px; /* Padding for a larger clickable area */
+    text-align: left; /* Align text to the left */
+    width: 100%; /* Full width for the button */
 }
-
-.logout-button:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
-    color: #ddd; /* Change text color on hover */
+.greeting {
+    color: #fff; /* White text color */
+    font-size: 1em; /* Same size as other text */
+    margin-left: 10px; /* Space between profile icon and greeting */
 }
