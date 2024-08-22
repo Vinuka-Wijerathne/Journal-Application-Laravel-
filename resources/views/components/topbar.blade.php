@@ -5,10 +5,15 @@
         </a>
     </div>
     <div class="menu">
-        <a href="{{ url('/') }}" class="menu-item">Home</a>
+       
         <a href="{{ route('profile.show') }}" class="menu-item">
-            <img src="{{ asset('images/profile.png') }}" alt="Profile" class="profile-icon">
+            <img src="{{ asset('images/profile.png') }}" alt="Profile" class="profile-icon"> 
         </a>
-        <a href="{{ route('logout') }}" class="menu-item">Logout</a>
+        
+        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit" class="logout-button">Logout</button>
+        </form>
+        
     </div>
 </div>

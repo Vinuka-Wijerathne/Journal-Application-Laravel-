@@ -54,6 +54,13 @@ Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEm
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
+// Logout route
+Route::post('/logout', function () {
+    Auth::logout();
+    return redirect('/'); // Redirect to home after logout
+})->name('logout');
+
+
 // Email verification notice route
 Route::get('/email/verify', function () {
     return view('auth.verify-email');

@@ -57,3 +57,19 @@
     height: auto;
     margin-right: 5px; /* Space between icon and text */
 }
+/* Logout Button Styles */
+.logout-button {
+    background-color: transparent; /* No background for a clean look */
+    border: none; /* Remove border */
+    color: #fff; /* White text for consistency */
+    font-size: 1em; /* Same font size as other menu items */
+    cursor: pointer; /* Pointer cursor for better UX */
+    padding: 8px 12px; /* Padding for a larger clickable area */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.logout-button:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
+    color: #ddd; /* Change text color on hover */
+}
