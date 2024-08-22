@@ -5,15 +5,16 @@
         </a>
     </div>
     <div class="menu">
-       
         <a href="{{ route('profile.show') }}" class="menu-item">
-            <img src="{{ asset('images/profile.png') }}" alt="Profile" class="profile-icon"> 
+            <img 
+                src="{{ auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : asset('images/profile.png') }}" 
+                alt="Profile" 
+                class="profile-icon">
         </a>
         
         <form action="{{ route('logout') }}" method="POST" style="display: inline;">
             @csrf
             <button type="submit" class="logout-button">Logout</button>
         </form>
-        
     </div>
 </div>

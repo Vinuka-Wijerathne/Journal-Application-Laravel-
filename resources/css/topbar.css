@@ -56,6 +56,7 @@
     width: 50px; /* Profile icon size */
     height: auto;
     margin-right: 5px; /* Space between icon and text */
+    border-radius: 50px;
 }
 /* Logout Button Styles */
 .logout-button {

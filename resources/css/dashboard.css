@@ -5,7 +5,6 @@ body {
     padding: 0;
 }
 
-
 .dashboard-container {
     max-width: 1200px;
     margin: 50px auto;
@@ -28,7 +27,7 @@ body {
 
 .search-container button {
     padding: 10px;
-    background-color: #5a67d8;
+    background-color: #fdc324;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -36,7 +35,7 @@ body {
 }
 
 .search-container button:hover {
-    background-color: #434190;
+    background-color: #000000;
 }
 
 .journals h2 {
@@ -53,12 +52,42 @@ body {
 .journals li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    position: relative; /* Necessary for positioning the delete icon */
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.journal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-delete-icon {
+    background: none;
+    border: none;
+    color: #ff0000;
+    font-size: 16px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.btn-delete-icon:hover {
+    color: #cc0000;
+}
+
+.journal-content p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555;
 }
 
 .btn-write, .btn-edit {
     display: inline-block;
     padding: 10px 15px;
-    background-color: #5a67d8;
+    background-color: #f89641;
     color: #fff;
     border-radius: 5px;
     text-decoration: none;
@@ -66,57 +95,82 @@ body {
 }
 
 .btn-write:hover, .btn-edit:hover {
-    background-color: #434190;
+    background-color: #000000;
 }
 
-.btn-delete {
-    background-color: red; /* Change to your preferred color */
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.btn-delete:hover {
-    opacity: 0.8; /* Change opacity on hover */
-}
 /* Button Styles for Favorite/Unfavorite */
-.btn-favorite, .btn-favorite {
+.btn-favorite {
     padding: 10px 15px;
-    background-color: #5a67d8; /* Default background color for Favorite */
+    background-color: #5a67d8;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10px; /* Space between buttons */
+    margin-left: 10px;
     text-align: center;
     transition: background-color 0.3s;
 }
 
 .btn-favorite:hover {
-    background-color: #434190; /* Darker shade on hover */
+    background-color: #000000;
 }
 
 .btn-favorite.is-favorite {
-    background-color: #f39c12; /* Different color when marked as favorite */
+    background-color: #f39c12;
 }
 
 .btn-favorite.is-favorite:hover {
-    background-color: #e67e22; /* Darker shade for hover effect when favorite */
+    background-color: #000000;
 }
 
 /* Show Favorite Entries Button */
 .filter-favorites button {
     padding: 10px 15px;
-    background-color: #5a67d8; /* Same color as other buttons */
+    background-color: #5ad85e;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 .filter-favorites button:hover {
-    background-color: #434190; /* Darker shade on hover */
+    background-color: #000000;
+}
+.confirmation-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.confirmation-popup p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.btn-confirm, .btn-cancel {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-confirm {
+    background-color: #d9534f;
+    color: white;
+}
+
+.btn-cancel {
+    background-color: #5bc0de;
+    color: white;
 }

@@ -31,14 +31,14 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/journal/search', [JournalController::class, 'search'])->name('journal.search');
 Route::get('/journal/favorites', [JournalController::class, 'favorites'])->name('journal.favorites');
 
-
-
 });
 
-
 // Profile route
-Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
 
+Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show')->middleware('auth');
+Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
+Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
+Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
 // Authentication routes
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
@@ -59,7 +59,6 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/'); // Redirect to home after logout
 })->name('logout');
-
 
 // Email verification notice route
 Route::get('/email/verify', function () {
