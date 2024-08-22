@@ -1,30 +1,50 @@
 /* Topbar Styles */
 .topbar {
-    background-color: #333;
-    padding: 10px;
+    background-color: #000; /* Change to pure black for consistency */
+    padding: 10px 20px; /* Add horizontal padding for better spacing */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: #fff; /* Use hex for color consistency */
 }
 
 .topbar .logo {
     font-size: 1.5em;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.topbar .logo-image {
+    width: 60px; /* Logo size */
+    height: auto;
+    margin-right: 10px; /* Increase space for better separation */
 }
 
 .topbar .menu {
     display: flex;
-    gap: 15px;
+    gap: 20px; /* Increase gap for better readability */
+    align-items: center; /* Center items vertically */
 }
 
 .topbar .menu a {
-    color: white;
+    color: #fff; /* Use hex for color consistency */
     text-decoration: none;
     font-size: 1em;
     transition: color 0.3s;
+    display: flex;
+    align-items: center; /* Center icons and text vertically */
+    padding: 5px 10px; /* Add padding for clickable area */
+    border-radius: 4px; /* Rounded corners for links */
 }
 
 .topbar .menu a:hover {
-    color: #ddd;
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle background on hover */
+    color: #ddd; /* Change text color on hover */
+}
+
+.topbar .profile-icon {
+    width: 24px; /* Profile icon size */
+    height: auto;
+    margin-right: 5px; /* Space between icon and text */
 }

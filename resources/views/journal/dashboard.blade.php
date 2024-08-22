@@ -13,14 +13,30 @@
             @if($journalEntries->isEmpty())
                 <p>You have no journal entries yet. Start writing your thoughts!</p>
             @else
-                <ul>
-                    @foreach($journalEntries as $entry)
-                        <li>
-                            <strong>{{ $entry->date->format('F j, Y') }}:</strong> {{ $entry->content }}
-                            <a href="{{ route('journal.edit', $entry->id) }}" class="btn-edit">Edit</a>
-                        </li>
-                    @endforeach
-                </ul>
+            <ul>
+                @foreach($journalEntries as $entry)
+                    <li>
+                        <strong>{{ $entry->date->format('F j, Y') }}:</strong> {{ $entry->content }}
+                        <a href="{{ route('journal.edit', $entry->id) }}" class="btn-edit">Edit</a>
+                        
+                        <!-- Toggle Favorite Form -->
+                        <form action="{{ route('journal.toggleFavorite', $entry->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            <button type="submit" class="btn-favorite">
+                                {{ $entry->is_favorite ? 'Unfavorite' : 'Favorite' }}
+                            </button>
+                        </form>
+            
+                        <!-- Delete Form -->
+                        <form action="{{ route('journal.destroy', $entry->id) }}" method="POST" style="display:inline;">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn-delete" onclick="return confirm('Are you sure you want to delete this entry?');">Delete</button>
+                        </form>
+                    </li>
+                @endforeach
+            </ul>
+            
             @endif
         </div>
 

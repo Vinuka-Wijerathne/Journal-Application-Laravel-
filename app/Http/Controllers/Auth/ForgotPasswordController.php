@@ -3,25 +3,20 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\PasswordResetLinkRequest;
-use Illuminate\Support\Facades\Password;
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ForgotPasswordController extends Controller
 {
-    public function showLinkRequestForm()
-    {
-        return view('auth.passwords.email');
-    }
+    /*
+    |--------------------------------------------------------------------------
+    | Password Reset Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller is responsible for handling password reset emails and
+    | includes a trait which assists in sending these notifications from
+    | your application to your users. Feel free to explore this trait.
+    |
+    */
 
-    public function sendResetLinkEmail(Request $request)
-    {
-        $request->validate(['email' => 'required|email']);
-
-        $response = Password::sendResetLink($request->only('email'));
-
-        return $response === Password::RESET_LINK_SENT
-            ? back()->with('status', __('We have emailed your password reset link!'))
-            : back()->withErrors(['email' => __('We can\'t find a user with that email address.')]);
-    }
+    use SendsPasswordResetEmails;
 }

@@ -65,3 +65,15 @@ body {
 .btn-write:hover, .btn-edit:hover {
     background-color: #434190;
 }
+.btn-delete {
+    background-color: red; /* Change to your preferred color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-delete:hover {
+    opacity: 0.8; /* Change opacity on hover */
+}

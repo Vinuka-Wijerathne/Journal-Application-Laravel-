@@ -1,29 +1,29 @@
 <x-layout>
+    <link rel="stylesheet" href="{{ asset('css/create.css') }}">
     <x-topbar />
 
-    <div class="dashboard-container">
-        <h1>Your Journal Entries</h1>
+    <div class="form-container">
+        <h1>Create a New Journal Entry</h1>
 
-        @if (session('success'))
-            <div class="alert alert-success">
-                {{ session('success') }}
+        <form action="{{ route('journal.store') }}" method="POST" enctype="multipart/form-data"> <!-- Add enctype for file uploads -->
+            @csrf
+
+            <div class="form-group">
+                <label for="date">Date:</label>
+                <input type="date" name="date" id="date" value="{{ $defaultDate }}" required>
             </div>
-        @endif
 
-        @if ($journalEntries->isEmpty())
-            <p>You have no journal entries yet. Start writing your thoughts!</p>
-        @else
-            <ul>
-                @foreach($journalEntries as $entry)
-                    <li>
-                        <strong>{{ \Carbon\Carbon::parse($entry->date)->format('F j, Y') }}:</strong> 
-                        {{ $entry->content }}
-                        <a href="{{ route('journal.edit', $entry->id) }}" class="btn-edit">Edit</a>
-                    </li>
-                @endforeach
-            </ul>
-        @endif
+            <div class="form-group">
+                <label for="content">Content:</label>
+                <textarea name="content" id="content" rows="5" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Image (optional):</label>
+                <input type="file" name="image" id="image" accept="image/*">
+            </div>
+
+            <button type="submit" class="btn-submit">Save Entry</button>
+        </form>
     </div>
-
-    <a href="{{ route('journal.create') }}" class="btn-write">Write a New Journal Entry</a>
 </x-layout>

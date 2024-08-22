@@ -16,21 +16,17 @@ use App\Models\User; // Import User model
 
 Route::get('/', [WelcomeController::class, 'index'])->name('home');
 
-// Protect the dashboard route with auth middleware
-Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-});
 
-
-// routes/web.php
 
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/journal/dashboard', [JournalController::class, 'index'])->name('journal.dashboard');
     Route::get('/journal/create', [JournalController::class, 'create'])->name('journal.create');
     Route::post('/journal', [JournalController::class, 'store'])->name('journal.store');
     Route::get('/journal/edit/{id}', [JournalController::class, 'edit'])->name('journal.edit');
     Route::put('/journal/update/{id}', [JournalController::class, 'update'])->name('journal.update');
+    Route::delete('/journal/{id}', [JournalController::class, 'destroy'])->name('journal.destroy');
+    Route::post('/journal/favorite/{id}', [JournalController::class, 'toggleFavorite'])->name('journal.toggleFavorite');
 
 });
 
@@ -76,3 +72,7 @@ Route::get('/email/verify/{id}/{hash}', function (Request $request, $id, $hash) 
 
     return redirect('/')->with('success', 'Email verified successfully!');
 })->middleware(['signed'])->name('verification.verify');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

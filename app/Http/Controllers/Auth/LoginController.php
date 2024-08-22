@@ -29,7 +29,7 @@ class LoginController extends Controller
                 ]);
             }
 
-            return redirect()->intended('journal.dashboard'); // Redirect to intended route if verified
+            return redirect()->intended(route('journal.dashboard')); // Redirect to intended route if verified
         }
 
         return back()->withErrors([

@@ -1,34 +1,78 @@
-/* Add this to your create.css file */
-.journal-create-container {
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Light background for contrast */
+    margin: 0;
+    padding: 0;
+}
+
+.form-container {
     max-width: 800px;
-    margin: 0 auto;
+   
+    margin: 50px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background: white;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
 }
 
 .form-group {
     margin-bottom: 20px;
 }
 
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="date"],
 textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    resize: none;
+    transition: border-color 0.3s;
 }
 
-.btn-primary {
-    background-color: #007bff;
+input[type="date"]:focus,
+textarea:focus {
+    border-color: #007bff; /* Blue border on focus */
+    outline: none;
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing */
+}
+
+.btn-submit {
+    background-color: #007bff; /* Blue button */
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Full-width button */
 }
 
-.btn-primary:hover {
-    background-color: #0056b3;
+.btn-submit:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.alert {
+    background-color: #d4edda; /* Green background for success messages */
+    color: #155724; /* Dark green text */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #c3e6cb; /* Green border */
 }
