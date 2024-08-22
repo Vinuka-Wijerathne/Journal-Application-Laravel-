@@ -57,11 +57,16 @@ class JournalController extends Controller
 
     
 
-    public function edit($id)
-    {
-        $journalEntry = JournalEntry::findOrFail($id);
-        return view('journal.edit', compact('journalEntry'));
-    }
+public function edit($id)
+{
+    $journalEntry = JournalEntry::findOrFail($id);
+
+    // Ensure content is in the right format for Editor.js
+    $journalEntry->content = json_decode($journalEntry->content, true); // Ensure it is an array
+
+    return view('journal.edit', compact('journalEntry'));
+}
+
 
     public function update(Request $request, $id)
     {
@@ -83,7 +88,24 @@ class JournalController extends Controller
 
         return redirect()->route('journal.dashboard')->with('success', 'Journal entry deleted successfully.');
     }
+    public function search(Request $request)
+{
+    $query = $request->input('query');
+    
+    $journalEntries = JournalEntry::where(function($q) use ($query) {
+        $q->whereDate('date', $query) // Check for date
+          ->orWhere('content', 'LIKE', '%' . $query . '%'); // Check for content
+    })->get();
 
+    return view('journal.dashboard', compact('journalEntries'));
+}
+
+    public function favorites()
+{
+    $journalEntries = JournalEntry::where('is_favorite', true)->get();
+
+    return view('journal.dashboard', compact('journalEntries'));
+}
     public function toggleFavorite($id)
     {
         $journalEntry = JournalEntry::findOrFail($id);
@@ -92,4 +114,24 @@ class JournalController extends Controller
 
         return redirect()->route('journal.dashboard')->with('success', 'Favorite status updated successfully.');
     }
+    public function uploadImage(Request $request)
+{
+    if($request->hasFile('upload')) {
+        $originName = $request->file('upload')->getClientOriginalName();
+        $fileName = pathinfo($originName, PATHINFO_FILENAME);
+        $extension = $request->file('upload')->getClientOriginalExtension();
+        $fileName = $fileName.'_'.time().'.'.$extension;
+
+        $request->file('upload')->move(public_path('images'), $fileName);
+
+        $CKEditorFuncNum = $request->input('CKEditorFuncNum');
+        $url = asset('images/'.$fileName); 
+        $msg = 'Image uploaded successfully'; 
+        $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
+
+        @header('Content-type: text/html; charset=utf-8'); 
+        echo $re;
+    }
+}
+
 }

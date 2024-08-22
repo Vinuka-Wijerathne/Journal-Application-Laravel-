@@ -1,5 +1,3 @@
-/* public/css/dashboard.css */
-
 body {
     font-family: 'Arial, sans-serif';
     background-color: #f4f4f4;
@@ -7,25 +5,6 @@ body {
     padding: 0;
 }
 
-.topbar {
-    background-color: #333;
-    color: #fff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.topbar-logo img {
-    height: 40px;
-}
-
-.topbar-nav a {
-    color: #fff;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
 
 .dashboard-container {
     max-width: 1200px;
@@ -34,6 +13,30 @@ body {
     background-color: #fff;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+}
+
+.search-container {
+    margin-bottom: 20px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    width: calc(100% - 120px); /* Full width minus button */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-container button {
+    padding: 10px;
+    background-color: #5a67d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #434190;
 }
 
 .journals h2 {
@@ -65,6 +68,7 @@ body {
 .btn-write:hover, .btn-edit:hover {
     background-color: #434190;
 }
+
 .btn-delete {
     background-color: red; /* Change to your preferred color */
     color: white;
@@ -76,4 +80,43 @@ body {
 
 .btn-delete:hover {
     opacity: 0.8; /* Change opacity on hover */
+}
+/* Button Styles for Favorite/Unfavorite */
+.btn-favorite, .btn-favorite {
+    padding: 10px 15px;
+    background-color: #5a67d8; /* Default background color for Favorite */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px; /* Space between buttons */
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn-favorite:hover {
+    background-color: #434190; /* Darker shade on hover */
+}
+
+.btn-favorite.is-favorite {
+    background-color: #f39c12; /* Different color when marked as favorite */
+}
+
+.btn-favorite.is-favorite:hover {
+    background-color: #e67e22; /* Darker shade for hover effect when favorite */
+}
+
+/* Show Favorite Entries Button */
+.filter-favorites button {
+    padding: 10px 15px;
+    background-color: #5a67d8; /* Same color as other buttons */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.filter-favorites button:hover {
+    background-color: #434190; /* Darker shade on hover */
 }

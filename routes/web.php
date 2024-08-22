@@ -27,6 +27,11 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/journal/update/{id}', [JournalController::class, 'update'])->name('journal.update');
     Route::delete('/journal/{id}', [JournalController::class, 'destroy'])->name('journal.destroy');
     Route::post('/journal/favorite/{id}', [JournalController::class, 'toggleFavorite'])->name('journal.toggleFavorite');
+    Route::post('ckeditor/upload', [JournalController::class, 'uploadImage'])->name('ckeditor.upload');
+    Route::get('/journal/search', [JournalController::class, 'search'])->name('journal.search');
+Route::get('/journal/favorites', [JournalController::class, 'favorites'])->name('journal.favorites');
+
+
 
 });
 

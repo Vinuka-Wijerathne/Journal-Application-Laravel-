@@ -7,11 +7,13 @@
     <title>Welcome</title>
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/topbar.css','resources/css/home.css', 'resources/css/login.css',
      'resources/css/register.css','resources/css/journal-form.css','resources/css/calender.css',
-     'resources/css/verify-email.css','resources/css/dashboard.css','resources/css/create.css'])
+     'resources/css/verify-email.css','resources/css/dashboard.css','resources/css/create.css','resources/css/edit.css'])
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 </head>

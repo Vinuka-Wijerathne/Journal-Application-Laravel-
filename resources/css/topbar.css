@@ -1,50 +1,59 @@
 /* Topbar Styles */
 .topbar {
-    background-color: #000; /* Change to pure black for consistency */
-    padding: 10px 20px; /* Add horizontal padding for better spacing */
+    background-color: #1a1a1a; /* Dark gray for a sleek look */
+    padding: 10px 20px; /* Padding for spacing */
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: #fff; /* Use hex for color consistency */
+    color: #fff; /* White text for contrast */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-.topbar .logo {
+.logo {
     font-size: 1.5em;
     font-weight: bold;
     display: flex;
     align-items: center;
 }
 
-.topbar .logo-image {
-    width: 60px; /* Logo size */
-    height: auto;
-    margin-right: 10px; /* Increase space for better separation */
+.logo-link {
+    display: flex;
+    align-items: center; /* Center image and text vertically */
+    color: #fff; /* White text for the logo */
+    text-decoration: none; /* Remove underline */
 }
 
-.topbar .menu {
+.logo-image {
+    width: 60px; /* Logo size */
+    height: auto;
+    margin-right: 10px; /* Space between logo image and text */
+}
+
+.menu {
     display: flex;
-    gap: 20px; /* Increase gap for better readability */
+    gap: 30px; /* Increased gap for better readability */
     align-items: center; /* Center items vertically */
 }
 
-.topbar .menu a {
-    color: #fff; /* Use hex for color consistency */
-    text-decoration: none;
+.menu-item {
+    color: #fff; /* White text */
+    text-decoration: none; /* Remove underline */
     font-size: 1em;
-    transition: color 0.3s;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
     display: flex;
     align-items: center; /* Center icons and text vertically */
-    padding: 5px 10px; /* Add padding for clickable area */
-    border-radius: 4px; /* Rounded corners for links */
+    padding: 8px 12px; /* Add padding for a larger clickable area */
+    border-radius: 4px; /* Rounded corners */
+    margin-top: 100x;
 }
 
-.topbar .menu a:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Subtle background on hover */
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background on hover */
     color: #ddd; /* Change text color on hover */
 }
 
-.topbar .profile-icon {
-    width: 24px; /* Profile icon size */
+.profile-icon {
+    width: 50px; /* Profile icon size */
     height: auto;
     margin-right: 5px; /* Space between icon and text */
 }
