@@ -174,3 +174,30 @@ body {
     background-color: #5bc0de;
     color: white;
 }
+/* Styles for the "Post" button */
+.btn-post {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 8px 16px; /* Padding for the button */
+    margin: 5px; /* Margin around the button */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 14px; /* Font size */
+    text-transform: uppercase; /* Uppercase text */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-post:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.btn-post:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.btn-post:active {
+    background-color: #3e8e41; /* Even darker green on click */
+    box-shadow: 0 5px #666; /* Add shadow */
+    transform: translateY(2px); /* Slightly move button down */
+}

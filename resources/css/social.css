@@ -1,0 +1,256 @@
+/* Container for the social page */
+.social-container {
+    max-width: 800px; /* Limit the width for a centered look */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #fafafa; /* Instagram-like light gray background */
+}
+
+/* Profile header */
+.profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid #ddd; /* Added border for a polished look */
+}
+
+.profile-header h2 {
+    font-size: 1.8em;
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.profile-header p {
+    font-size: 1em;
+    color: #666;
+}
+
+.follow-info {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Journal posts section */
+.journal-posts {
+    margin-top: 20px;
+}
+
+.journal-posts h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.journal-entry {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.journal-entry h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.journal-entry p {
+    font-size: 1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.journal-entry img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* Social container links */
+.social-container a {
+    text-decoration: none;
+    color: #3897f0; /* Instagram's blue color for links */
+}
+
+.social-container a:hover {
+    text-decoration: underline;
+}
+
+/* Tabs styling */
+.social-tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the tabs fit within the rounded container */
+}
+
+.social-tabs button {
+    background-color: inherit;
+    color: white;
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border: none;
+    outline: none;
+    flex-grow: 1; /* Ensure the tabs take up equal space */
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.social-tabs button:hover {
+    background-color: #555;
+    color: white;
+}
+
+.social-tabs button.active {
+    background-color: #3897f0; /* Instagram's blue color for the active tab */
+    color: white;
+}
+
+/* Tab content styling */
+.social-section {
+    padding: 20px;
+    display: none; /* Hidden by default */
+}
+
+.social-section.active {
+    display: block; /* Display when active */
+}
+
+/* Profile search results */
+.search-results .search-entry {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    margin-bottom: 10px;
+}
+
+.search-profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 1px solid #ddd; /* Added border for a polished look */
+}
+
+.search-entry h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+.search-entry p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0 0;
+}
+
+/* Post interactions */
+.interaction-section {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.interaction-section button {
+    margin-right: 10px;
+    background-color: #3897f0;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.interaction-section button:hover {
+    background-color: #005f73;
+}
+/* Unfollow Button Styling */
+.unfollow-button, .follow-button {
+    background-color: transparent;
+    color: #3897f0; /* Instagram's blue color */
+    border: 1px solid #3897f0;
+    border-radius: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.unfollow-button:hover, .follow-button:hover {
+    background-color: #3897f0;
+    color: white;
+}
+
+/* Search Profiles Section Styling */
+.search-results {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.search-entry {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    transition: box-shadow 0.3s;
+}
+
+.search-entry:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.search-profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.search-entry h4 {
+    font-size: 1.2em;
+    color: #333;
+    margin: 0;
+}
+
+.search-entry p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 5px 0;
+}
+
+.search-entry form {
+    margin-left: auto; /* Aligns follow/unfollow button to the right */
+}

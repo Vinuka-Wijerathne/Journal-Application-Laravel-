@@ -7,7 +7,8 @@
     <title>Welcome</title>
     @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/topbar.css','resources/css/home.css', 'resources/css/login.css',
      'resources/css/register.css','resources/css/journal-form.css','resources/css/calender.css',
-     'resources/css/verify-email.css','resources/css/dashboard.css','resources/css/create.css','resources/css/edit.css','resources/css/profile.css'])
+     'resources/css/verify-email.css','resources/css/dashboard.css','resources/css/create.css',
+     'resources/css/edit.css','resources/css/profile.css','resources/css/social.css'])
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">

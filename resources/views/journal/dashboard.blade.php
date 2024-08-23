@@ -94,6 +94,14 @@
                                     {{ $entry->is_favorite ? 'Unfavorite' : 'Favorite' }}
                                 </button>
                             </form>
+
+                            <!-- Post Button -->
+                            <form action="{{ route('journal.post', $entry->id) }}" method="POST" style="display:inline;">
+                                @csrf
+                                <button type="submit" class="btn-post">
+                                    {{ $entry->is_posted ? 'Unpost' : 'Post' }}
+                                </button>
+                            </form>
                         </li>
                     @endforeach
                 </ul>

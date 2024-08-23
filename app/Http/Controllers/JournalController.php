@@ -114,6 +114,17 @@ public function edit($id)
 
         return redirect()->route('journal.dashboard')->with('success', 'Favorite status updated successfully.');
     }
+    public function togglePost($id)
+{
+    $journal = JournalEntry::findOrFail($id);
+
+    // Toggle the post status
+    $journal->is_posted = !$journal->is_posted;
+    $journal->save();
+
+    return redirect()->route('journal.dashboard')->with('success', 'Journal entry status updated successfully.');
+}
+
     public function uploadImage(Request $request)
 {
     if($request->hasFile('upload')) {

@@ -8,8 +8,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SocialController;
 use Illuminate\Http\Request; // Import Request class
 use Illuminate\Support\Facades\Auth; // Import Auth class
 use App\Models\User; // Import User model
@@ -30,8 +31,16 @@ Route::middleware(['auth'])->group(function () {
     Route::post('ckeditor/upload', [JournalController::class, 'uploadImage'])->name('ckeditor.upload');
     Route::get('/journal/search', [JournalController::class, 'search'])->name('journal.search');
 Route::get('/journal/favorites', [JournalController::class, 'favorites'])->name('journal.favorites');
+Route::post('/journal/{id}/post', [JournalController::class, 'togglePost'])->name('journal.post');
+
 
 });
+
+Route::get('/social', [SocialController::class, 'index'])->name('social.index');
+Route::get('/social', [SocialController::class, 'showSocialPage'])->name('social.page');
+Route::get('/social/search', [SocialController::class, 'search'])->name('social.search');
+Route::post('/social/follow/{user}', [SocialController::class, 'follow'])->name('social.follow');
+
 
 // Profile route
 
@@ -39,6 +48,16 @@ Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show')
 Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit')->middleware('auth');
 Route::post('/profile/update', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
 Route::put('/profile/update', [ProfileController::class, 'update'])->name('profile.update');
+Route::get('/profiles/{user}', [ProfileController::class, 'showProfile'])->name('profiles.show');
+
+Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::get('/posts/{post}/comments', [CommentController::class, 'index'])->name('comments.index'); // Optional
+Route::delete('/comments/{comment}', [CommentController::class, 'destroy'])->name('comments.destroy'); // Optional
+
+
+
+
+
 // Authentication routes
 Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);

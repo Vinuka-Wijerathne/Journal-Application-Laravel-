@@ -22,4 +22,10 @@ class JournalEntry extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // Define the relationship to comments
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
 }

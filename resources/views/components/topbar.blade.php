@@ -20,6 +20,8 @@
             <button class="menu-icon">☰</button>
             <div class="dropdown-content">
                 <a href="{{ route('journal.dashboard') }}">Dashboard</a>
+                <a href="{{ route('social.page') }}">Social</a> <!-- Social Link -->
+
                 <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                     @csrf
                     <button type="submit" class="logout-menu-item">Logout</button>

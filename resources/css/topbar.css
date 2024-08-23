@@ -85,6 +85,7 @@
 /* Show dropdown on hover */
 .menu-dropdown:hover .dropdown-content {
     display: block; /* Show dropdown */
+    border-radius: 10px;
 }
 
 /* Dropdown Links */

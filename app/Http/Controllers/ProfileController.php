@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -39,5 +40,17 @@ class ProfileController extends Controller
 
     return redirect()->route('profile.show')->with('success', 'Profile updated successfully!');
 }
+public function showProfile($id)
+{
+    $user = User::findOrFail($id);
+    $followers = $user->followers()->count();
+    $following = $user->following()->count();
+    $journals = $user->journalEntries()->where('is_posted', true)->get();
+    $isFollowing = Auth::user()->isFollowing($user->id); // Check if the current user is following this user
+
+    return view('profile.showprofiles', compact('user', 'followers', 'following', 'journals', 'isFollowing'));
+}
+
+
 
 }

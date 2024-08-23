@@ -1,15 +1,15 @@
 <?php
-
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail; // Import the MustVerifyEmail interface
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use App\Models\JournalEntry; // Ensure this is imported
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use App\Models\JournalEntry;
 
-class User extends Authenticatable implements MustVerifyEmail // Implement the MustVerifyEmail interface
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens, Notifiable;
 
@@ -17,6 +17,8 @@ class User extends Authenticatable implements MustVerifyEmail // Implement the M
         'name',
         'email',
         'password',
+        'avatar', // Ensure this field is included
+        'bio',    // Ensure this field is included
     ];
 
     protected $hidden = [
@@ -32,6 +34,24 @@ class User extends Authenticatable implements MustVerifyEmail // Implement the M
     public function journalEntries(): HasMany
     {
         return $this->hasMany(JournalEntry::class);
+    }
+
+    // Define the followers relationship
+    public function followers(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'followers', 'following_id', 'follower_id');
+    }
+
+    // Define the following relationship
+    public function following(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'followers', 'follower_id', 'following_id');
+    }
+
+    // Add the isFollowing method to check if the user is following another user
+    public function isFollowing($userId): bool
+    {
+        return $this->following()->where('following_id', $userId)->exists();
     }
 
     // Add the hasVerifiedEmail method to your User model
